@@ -1,0 +1,22 @@
+sudo: require
+dist: bionic
+language: cpp
+compiler: gcc
+
+git:
+  depth: 1
+
+branches:
+  only: 
+  - master
+  - develop
+
+addons:
+  apt:
+    update: true
+    package:
+    - cmake
+    - gcc
+
+script:
+  - mkdir build && cd build && cmake .. && make
